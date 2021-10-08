@@ -59,12 +59,14 @@ Feature: display list of movies sorted by different criteria
     And I am on the RottenPotatoes home page     # features/step_definitions/web_steps.rb:44
     Then 10 seed movies should exist             # features/step_definitions/movie_steps.rb:12
 
-  Scenario: sort movies alphabetically # features/sort_movie_list.feature:25
-    When I follow "Movie Title"        # features/step_definitions/web_steps.rb:56
+  Scenario: sort movies alphabetically                        # features/sort_movie_list.feature:25
+    When I follow "Movie Title"                               # features/step_definitions/web_steps.rb:56
+    Then I should see "2001: A Space Odyssey" before "Amelie" # features/step_definitions/movie_steps.rb:20
 
-  Scenario: sort movies in increasing order of release date # features/sort_movie_list.feature:29
+  Scenario: sort movies in increasing order of release date # features/sort_movie_list.feature:30
     When I follow "Release Date"                            # features/step_definitions/web_steps.rb:56
+    Then I should see "Aladdin" before "Amelie"             # features/step_definitions/movie_steps.rb:20
 
 4 scenarios (4 passed)
-22 steps (22 passed)
-0m0.620s
+24 steps (24 passed)
+0m0.661s
