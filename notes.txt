@@ -1,0 +1,15 @@
+1. Run RottenPotatoes locally on cloud9
+gem install bundler
+cd rottenpotatoes/
+rvm install "ruby-2.6.6"
+sudo yum install postgresql-devel
+gem install pg
+bundle
+bundle install --without production
+rake db:migrate
+rake db:seed
+rails s -p $PORT -b $IP
+
+2. rake db:migrate RAILS_ENV=test
+
+3. cucumber 
